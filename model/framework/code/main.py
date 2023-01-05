@@ -1,40 +1,56 @@
-# imports
-import os
-import csv
-import joblib
-import sys
+#imports
+import pandas as pd
+import drugtax
+import argparse
 from rdkit import Chem
-from rdkit.Chem.Descriptors import MolWt
 
-# parse arguments
-input_file = sys.argv[1]
-output_file = sys.argv[2]
+def retrieve_taxonomy(path):
 
-# current file directory
-root = os.path.dirname(os.path.abspath(__file__))
+	def kekulize_smiles(smile):
+		m = Chem.MolFromSmiles(smile)
+		canonical_smile = Chem.Kekulize(m)
+		canonical_smile = Chem.MolToSmiles(m,kekuleSmiles=True)
+		return canonical_smile
 
-# checkpoints directory
-checkpoints_dir = os.path.abspath(os.path.join(root, "..", "..", "checkpoints"))
+	df = pd.read_csv(path)
+	smiles_lst = list(df.smiles)
+	smiles_lst = [kekulize_smiles(i) for i in smiles_lst]
 
-# read checkpoints (here, simply an integer number: 42)
-ckpt = joblib.load(os.path.join(checkpoints_dir, "checkpoints.joblib"))
 
-# model to be run (here, calculate the Molecular Weight and add ckpt (42) to it)
-def my_model(smiles_list, ckpt):
-    return [MolWt(Chem.MolFromSmiles(smi))+ckpt for smi in smiles_list]
-    
-# read SMILES from .csv file, assuming one column with header
-with open(input_file, "r") as f:
-    reader = csv.reader(f)
-    next(reader) # skip header
-    smiles_list = [r[0] for r in reader]
-    
-# run model
-outputs = my_model(smiles_list, ckpt)
+	input_sep = ' '
+	smiles_table, summary_table = drugtax.retrieve_taxonomic_class(smiles_lst, input_mode = "smiles_list", output_name = "testing", write_values = True)
 
-# write output in a .csv file
-with open(output_file, "w") as f:
-    writer = csv.writer(f)
-    writer.writerow(["value"]) # header
-    for o in outputs:
-        writer.writerow([o])
+	f_keys = drugtax.DrugTax(smiles_table['SMILE'][0]).features.keys()
+
+	smiles_table['features'] = None
+
+	smiles_table['features'] = smiles_table['SMILE'].apply(lambda x : drugtax.DrugTax(x).features.values())
+
+	smiles_table['features'] = smiles_table['features'].apply(lambda x : dict(zip(f_keys, x)))
+
+	df_final = pd.DataFrame(list(smiles_table['features']))
+
+	smiles_table = smiles_table.drop(['Taxonomy', 'features'], axis = 1)
+
+	smiles_table = pd.concat([smiles_table, df_final], axis = 1)
+
+	return smiles_table 
+
+
+if __name__ == "__main__":
+    # initialize ArgumentParser class of argparse
+    parser = argparse.ArgumentParser()
+
+    # currently, we need path to dataset, flag to use a custom model, path to custom model, and flag to compute bias metrics
+    parser.add_argument("--file_path", type=str)
+    # parser.add_argument("--target_column_name", type=str)
+
+    # read the arguments from the command line
+    args = parser.parse_args()
+
+    file_path= args.file_path
+    # target_column_name = args.target_column_name
+
+    dout = retrieve_taxonomy(file_path)
+
+    dout.to_csv('output.csv')
