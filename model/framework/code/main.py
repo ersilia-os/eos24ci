@@ -1,7 +1,7 @@
 #imports
 import pandas as pd
 import drugtax
-import argparse
+import sys
 from rdkit import Chem
 
 def retrieve_taxonomy(path):
@@ -38,19 +38,9 @@ def retrieve_taxonomy(path):
 
 
 if __name__ == "__main__":
-    # initialize ArgumentParser class of argparse
-    parser = argparse.ArgumentParser()
-
-    # currently, we need path to dataset, flag to use a custom model, path to custom model, and flag to compute bias metrics
-    parser.add_argument("--file_path", type=str)
-    # parser.add_argument("--target_column_name", type=str)
-
-    # read the arguments from the command line
-    args = parser.parse_args()
-
-    file_path= args.file_path
-    # target_column_name = args.target_column_name
+    file_path = sys.argv[1]
+    output_path = sys.argv[2]
 
     dout = retrieve_taxonomy(file_path)
 
-    dout.to_csv('output.csv')
+    dout.to_csv(output_path)
