@@ -1,30 +1,31 @@
 # Model title
 
 ## Model identifiers
-- Slug: <add_slug_here>
-- Ersilia ID: <add_ersilia_id_here>
-- Tags: <add_tags_here>
+- Slug: drugtax
+- Ersilia ID: eos24ci
+- Tags: taxonomy classification, bulk analysis
 
 ## Model description
 
-Short description of the model in one or two sentences
+DrugTax is a python package for drug taxonomy identification and explainable feature extraction.
 
-- Input:
-- Output: {unit and description of output) 
-- Model type: (Regression or Classification)
-- Training set: (number of compounds and link to the training data)
-- Mode of training: (is it pretrained? that is were the checkpoints downloaded and used to train the model? or is it retrained? that is trained from scratch with an updated data)
+- Input: SMILES
+- Output: 
+- Model type: Classification
+- Training set: 
+- Mode of training: 
 
 ## Source code
 
-Cite the source publication
+Preto, A. J., Paulo C. Correia, and Irina S. Moreira. "DrugTax: package for drug taxonomy identification and explainable feature extraction." Journal of Cheminformatics 14.1 (2022): 1-10. https://link.springer.com/article/10.1186/s13321-022-00649-w
 
-- Code: include link to the source code
+- Code: [include link to the source code](https://github.com/MoreiraLAB/DrugTax)]
 - Checkpoints: include the link to the checkpoints used if model is a pretrained model
 
 ## License
 
-State the licences used which are GPL v3 license used by Ersilia and the license used by the source code, if any exists. Use [this guide]() on how to license new models to be incorporated into Ersilia's model hub 
+GPL v3 license used by Ersilia.
+GNU General Public License v3.0 used by source code.
 
 ## History
 
