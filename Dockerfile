@@ -1,7 +1,11 @@
 FROM bentoml/model-server:0.11.0-py37
 MAINTAINER ersilia
 
-RUN conda install -c conda-forge rdkit=2021.03.4
+<<<<<<< HEAD
+RUN pip install rdkit==2022.3.3 
+=======
+RUN pip install rdkit==2022.3.3
+>>>>>>> 6812e447a01cbbd9c149260dd37ca25463dbafcf
 RUN pip install joblib==1.1.0
 RUN pip install drugtax 
 RUN pip install upsetplot==0.6.0 

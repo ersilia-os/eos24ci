@@ -23,6 +23,11 @@ DrugTax takes SMILES inputs and classifies the molecule according to their taxon
 * [Source Code](https://github.com/MoreiraLAB/DrugTax)
 * Ersilia contributor: [Femme-js](https://github.com/Femme-js)
 
+## Ersilia model URLs
+* [GitHub](https://github.com/ersilia-os/eos24ci)
+* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos24ci.zip)
+* [DockerHub](https://hub.docker.com/r/ersiliaos/eos24ci) (AMD64, ARM64)
+
 ## Citation
 
 If you use this model, please cite the [original authors](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-022-00649-w) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
