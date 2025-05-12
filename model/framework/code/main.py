@@ -1,8 +1,11 @@
 #imports
 import pandas as pd
 import drugtax
+import os
 import sys
 from rdkit import Chem
+
+root = os.path.dirname(os.path.abspath(__file__))
 
 def retrieve_taxonomy(path):
 
@@ -36,11 +39,34 @@ def retrieve_taxonomy(path):
 
 	return smiles_table 
 
+replacements = {
+    '.': 'dot',
+    '=': 'eq',
+    '#': 'hash',
+    '@': 'at',
+    '+': 'plus',
+    '-': 'minus',
+    '[': 'bracket',
+    '(': 'paren',
+    '\\': 'backslash',
+    '/': 'slash'
+}
+
+def clean_column_name(col):
+    col = col.lower()
+    for symbol, replacement in replacements.items():
+        col = col.replace(symbol, replacement)
+    return col
+
+
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
     output_path = sys.argv[2]
-
-    dout = retrieve_taxonomy(file_path)
-
-    dout.to_csv(output_path)
+    df = retrieve_taxonomy(file_path)
+    df.columns = [clean_column_name(col) for col in df.columns]
+    df.drop(columns=['smile'], inplace=True)
+    df.to_csv(output_path, index=False)
+    for file in ['testing.csv', 'testing_assess.csv']:
+        if os.path.exists(os.path.join(root,"..", file)):
+	        os.remove(file)
