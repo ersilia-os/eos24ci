@@ -4,34 +4,44 @@
     "Status": "Ready",
     "Title": "DrugTax: Drug taxonomy",
     "Description": "DrugTax takes SMILES inputs and classifies the molecule according to their taxonomy, organic or inorganic kingdom and their subclasses, using a 0/1 binary classification for each one. It generates a vector of 163 features including the taxonomy classification and other key information such as number of carbons, nitrogens\u2026 These vectors can be used for subsequent molecular representation in chemoinformatic pipelines.\n",
-    "Mode": "Pretrained",
+    "Source": "Local",
+    "Source Type": "External",
     "Input": [
         "Compound"
     ],
-    "Input Shape": "Single",
-    "Task": [
-        "Representation"
+    "Input Dimension": 1,
+    "Task": "Representation",
+    "Subtask": "Featurization",
+    "Biomedical Area": [
+        "Any"
+    ],
+    "Target Organism": [
+        "Not Applicable"
     ],
     "Output": [
         "Descriptor"
     ],
-    "Output Type": [
-        "Integer"
-    ],
-    "Output Shape": "List",
+    "Output Dimension": 163,
+    "Output Consistency": "Fixed",
     "Interpretation": "A vector of 163 points, each one corresponding to a particular taxonomic or structural molecular feature",
     "Tag": [
         "Fingerprint",
         "Descriptor"
     ],
     "Publication": "https://jcheminf.biomedcentral.com/articles/10.1186/s13321-022-00649-w",
+    "Publication Type": "Peer reviewed",
+    "Publication Year": 2022,
     "Source Code": "https://github.com/MoreiraLAB/DrugTax",
-    "License": "GPL-3.0",
+    "License": "GPL-3.0-only",
     "Contributor": "Femme-js",
-    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos24ci.zip",
+    "Incorporation Date": "2023-01-03",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos24ci",
     "Docker Architecture": [
         "AMD64",
         "ARM64"
+    ],
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos24ci.zip",
+    "Deployment": [
+        "Local"
     ]
 }
