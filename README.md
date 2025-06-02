@@ -2,7 +2,7 @@
 
 DrugTax takes SMILES inputs and classifies the molecule according to their taxonomy, organic or inorganic kingdom and their subclasses, using a 0/1 binary classification for each one. It generates a vector of 163 features including the taxonomy classification and other key information such as number of carbons, nitrogens… These vectors can be used for subsequent molecular representation in chemoinformatic pipelines.
 
-This model was incorporated on 2023-01-03.
+This model was incorporated on 2022-12-20.
 
 ## Information
 ### Identifiers
