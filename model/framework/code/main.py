@@ -15,8 +15,8 @@ def retrieve_taxonomy(path):
 		canonical_smile = Chem.MolToSmiles(m,kekuleSmiles=True)
 		return canonical_smile
 
-	df = pd.read_csv(path)
-	smiles_lst = list(df.smiles)
+	df = pd.read_csv(path); 
+	smiles_lst = list(df["smiles"] if "smiles" in df.columns else df["input"])
 	smiles_lst = [kekulize_smiles(i) for i in smiles_lst]
 
 
