@@ -50,7 +50,12 @@ _10 of 163 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `1`
 - **Environment Size (Mb):** `700`
+- **Image Size (Mb):** `647.82`
 
+**Computational Performance (seconds):**
+- 10 inputs: `29.88`
+- 100 inputs: `21.32`
+- 10000 inputs: `312.35`
 
 ### References
 - **Source Code**: [https://github.com/MoreiraLAB/DrugTax](https://github.com/MoreiraLAB/DrugTax)
