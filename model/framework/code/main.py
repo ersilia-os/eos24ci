@@ -43,7 +43,7 @@ replacements = {
     '.': 'dot',
     '=': 'eq',
     '#': 'hash',
-    '@': 'at',
+    '@': 'at_sym',
     '+': 'plus',
     '-': 'minus',
     '[': 'bracket',
