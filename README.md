@@ -4,6 +4,7 @@ DrugTax takes SMILES inputs and classifies the molecule according to their taxon
 
 This model was incorporated on 2022-12-20.
 
+
 ## Information
 ### Identifiers
 - **Ersilia Identifier:** `eos24ci`
@@ -13,7 +14,7 @@ This model was incorporated on 2022-12-20.
 - **Task:** `Representation`
 - **Subtask:** `Featurization`
 - **Biomedical Area:** `Any`
-- **Target Organism:** `Not Applicable`
+- **Target Organism:** `Any`
 - **Tags:** `Fingerprint`, `Descriptor`
 
 ### Input
