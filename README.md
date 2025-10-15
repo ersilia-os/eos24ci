@@ -2,8 +2,7 @@
 
 DrugTax takes SMILES inputs and classifies the molecule according to their taxonomy, organic or inorganic kingdom and their subclasses, using a 0/1 binary classification for each one. It generates a vector of 163 features including the taxonomy classification and other key information such as number of carbons, nitrogens… These vectors can be used for subsequent molecular representation in chemoinformatic pipelines.
 
-This model was incorporated on 2022-12-20.
-
+This model was incorporated on 2022-12-20.Last packaged on 2025-10-15.
 
 ## Information
 ### Identifiers
@@ -51,12 +50,12 @@ _10 of 163 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `1`
 - **Environment Size (Mb):** `702`
-- **Image Size (Mb):** `647.82`
+- **Image Size (Mb):** `665.02`
 
 **Computational Performance (seconds):**
-- 10 inputs: `29.88`
-- 100 inputs: `21.32`
-- 10000 inputs: `312.35`
+- 10 inputs: `27.28`
+- 100 inputs: `17.47`
+- 10000 inputs: `65.51`
 
 ### References
 - **Source Code**: [https://github.com/MoreiraLAB/DrugTax](https://github.com/MoreiraLAB/DrugTax)
