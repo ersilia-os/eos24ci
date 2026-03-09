@@ -16,7 +16,7 @@ def retrieve_taxonomy(path):
 		return canonical_smile
 
 	df = pd.read_csv(path);
-	col_name = df.columns()[0]
+	col_name = df.columns[0]
 	smiles_lst = list(df[col_name])
 	smiles_lst = [kekulize_smiles(i) for i in smiles_lst]
 
