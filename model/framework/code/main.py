@@ -4,6 +4,7 @@ import drugtax
 import os
 import sys
 from rdkit import Chem
+from ersilia_pack_utils.core import write_out, read_smiles
 
 root = os.path.dirname(os.path.abspath(__file__))
 
@@ -15,9 +16,7 @@ def retrieve_taxonomy(path):
 		canonical_smile = Chem.MolToSmiles(m,kekuleSmiles=True)
 		return canonical_smile
 
-	df = pd.read_csv(path);
-	col_name = df.columns[0]
-	smiles_lst = list(df[col_name])
+	_, smiles_lst = read_smiles(path)
 	smiles_lst = [kekulize_smiles(i) for i in smiles_lst]
 
 

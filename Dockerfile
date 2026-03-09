@@ -9,6 +9,7 @@ RUN pip install upsetplot==0.6.0
 RUN pip install pandas==1.1.5 
 RUN pip install matplotlib==3.3.4
 RUN pip install pubchempy==1.0.4
+RUN pip install ersilia-pack-utils==0.1.5
 
 
 
