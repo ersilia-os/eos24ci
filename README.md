@@ -53,9 +53,9 @@ _10 of 163 columns are shown_
 - **Image Size (Mb):** `662.35`
 
 **Computational Performance (seconds):**
-- 10 inputs: `28.42`
-- 100 inputs: `18.66`
-- 10000 inputs: `66.38`
+- 10 inputs: `28.76`
+- 100 inputs: `18.84`
+- 10000 inputs: `67.87`
 
 ### References
 - **Source Code**: [https://github.com/MoreiraLAB/DrugTax](https://github.com/MoreiraLAB/DrugTax)
