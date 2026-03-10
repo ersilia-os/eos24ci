@@ -20,8 +20,13 @@ def retrieve_taxonomy(path):
 	smiles_lst = [kekulize_smiles(i) for i in smiles_lst]
 
 
+	import tempfile
 	input_sep = ' '
-	smiles_table, summary_table = drugtax.retrieve_taxonomic_class(smiles_lst, input_mode = "smiles_list", output_name = "testing", write_values = True)
+	with tempfile.TemporaryDirectory() as tmp_dir:
+		orig_dir = os.getcwd()
+		os.chdir(tmp_dir)
+		smiles_table, summary_table = drugtax.retrieve_taxonomic_class(smiles_lst, input_mode = "smiles_list", output_name = "testing", write_values = True)
+		os.chdir(orig_dir)
 
 	f_keys = drugtax.DrugTax(smiles_table['SMILE'][0]).features.keys()
 
@@ -67,6 +72,3 @@ if __name__ == "__main__":
     df.columns = [clean_column_name(col) for col in df.columns]
     df.drop(columns=['smile'], inplace=True)
     df.to_csv(output_path, index=False)
-    for file in ['testing.csv', 'testing_assess.csv']:
-        if os.path.exists(os.path.join(root,"..", file)):
-	        os.remove(file)
