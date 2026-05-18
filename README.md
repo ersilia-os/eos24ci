@@ -59,7 +59,7 @@ _10 of 163 columns are shown_
 
 ### References
 - **Source Code**: [https://github.com/MoreiraLAB/DrugTax](https://github.com/MoreiraLAB/DrugTax)
-- **Publication**: [https://jcheminf.biomedcentral.com/articles/10.1186/s13321-022-00649-w](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-022-00649-w)
+- **Publication**: [https://doi.org/10.1186/s13321-022-00649-w](https://doi.org/10.1186/s13321-022-00649-w)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2022`
 - **Ersilia Contributor:** [Femme-js](https://github.com/Femme-js)
