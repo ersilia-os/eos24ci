@@ -1,6 +1,6 @@
 # DrugTax: Drug taxonomy
 
-DrugTax takes SMILES inputs and classifies the molecule according to their taxonomy, organic or inorganic kingdom and their subclasses, using a 0/1 binary classification for each one. It generates a vector of 163 features including the taxonomy classification and other key information such as number of carbons, nitrogens… These vectors can be used for subsequent molecular representation in chemoinformatic pipelines.
+Classifies a molecule within a chemical taxonomy and returns 163 features combining taxonomic membership with character counts taken from the SMILES string. DrugTax, from Preto and colleagues, was written so that taxonomy becomes directly usable as model input: each compound is placed among organic and inorganic superclasses, and the resulting vector stays interpretable, unlike a hashed fingerprint. Features are derived deterministically from structure, making them cheap to compute and stable across runs.
 
 This model was incorporated on 2022-12-20.Last packaged on 2026-03-10.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2022-12-20.Last packaged on 2026-03-10.
 ### Output
 - **Output Dimension:** `163`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** A vector of 163 points, each one corresponding to a particular taxonomic or structural molecular feature
+- **Interpretation:** 163 taxonomy and composition features describing the chemical class of the molecule.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
