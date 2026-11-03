@@ -44,7 +44,7 @@
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos24ci",
     "Docker Architecture": "AMD64",
     "Model Size": 1.0,
-    "Environment Size": 680.0,
+    "Environment Size": 679.0,
     "Image Size": 662.35,
     "Computational Performance 1": 28.76,
     "Computational Performance 2": 18.32,
