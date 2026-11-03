@@ -2,7 +2,8 @@
 
 Classifies a molecule within a chemical taxonomy and returns 163 features combining taxonomic membership with character counts taken from the SMILES string. DrugTax, from Preto and colleagues, was written so that taxonomy becomes directly usable as model input: each compound is placed among organic and inorganic superclasses, and the resulting vector stays interpretable, unlike a hashed fingerprint. Features are derived deterministically from structure, making them cheap to compute and stable across runs.
 
-This model was incorporated on 2022-12-20.Last packaged on 2026-03-10.
+This model was incorporated on 2022-12-20.
+Last packaged on 2026-03-10.
 
 ## Information
 ### Identifiers
