@@ -3,7 +3,7 @@
 Classifies a molecule within a chemical taxonomy and returns 163 features combining taxonomic membership with character counts taken from the SMILES string. DrugTax, from Preto and colleagues, was written so that taxonomy becomes directly usable as model input: each compound is placed among organic and inorganic superclasses, and the resulting vector stays interpretable, unlike a hashed fingerprint. Features are derived deterministically from structure, making them cheap to compute and stable across runs.
 
 This model was incorporated on 2022-12-20.
-Last packaged on 2026-03-10.
+Last packaged on 2026-11-03.
 
 ## Information
 ### Identifiers
@@ -45,18 +45,18 @@ _10 of 163 columns are shown_
 - **Source:** `Local`
 - **Source Type:** `External`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos24ci](https://hub.docker.com/r/ersiliaos/eos24ci)
-- **Docker Architecture:** `AMD64`
+- **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos24ci.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos24ci.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `1`
 - **Environment Size (Mb):** `679`
-- **Image Size (Mb):** `662.35`
+- **Image Size (Mb):** `655.24`
 
 **Computational Performance (seconds):**
-- 10 inputs: `28.76`
-- 100 inputs: `18.84`
-- 10000 inputs: `67.87`
+- 10 inputs: `23.43`
+- 100 inputs: `13.87`
+- 10000 inputs: `63.78`
 
 ### References
 - **Source Code**: [https://github.com/MoreiraLAB/DrugTax](https://github.com/MoreiraLAB/DrugTax)
