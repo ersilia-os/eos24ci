@@ -38,17 +38,20 @@
     "License": "GPL-3.0-only",
     "Contributor": "Femme-js",
     "Incorporation Date": "2022-12-20",
-    "Last Packaging Date": "2026-03-10",
+    "Last Packaging Date": "2026-11-03",
     "Release": "v1.0.0",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos24ci.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos24ci",
-    "Docker Architecture": "AMD64",
+    "Docker Architecture": [
+        "AMD64",
+        "ARM64"
+    ],
     "Model Size": 1.0,
     "Environment Size": 679.0,
-    "Image Size": 662.35,
-    "Computational Performance 1": 28.76,
-    "Computational Performance 2": 18.32,
-    "Computational Performance 3": 18.84,
-    "Computational Performance 4": 27.92,
-    "Computational Performance 5": 67.87
+    "Image Size": 655.24,
+    "Computational Performance 1": 23.43,
+    "Computational Performance 2": 13.32,
+    "Computational Performance 3": 13.87,
+    "Computational Performance 4": 23.21,
+    "Computational Performance 5": 63.78
 }
