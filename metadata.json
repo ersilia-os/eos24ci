@@ -39,7 +39,7 @@
     "Contributor": "Femme-js",
     "Incorporation Date": "2022-12-20",
     "Last Packaging Date": "2026-11-03",
-    "Release": "v1.0.0",
+    "Release": "v1.1.0",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos24ci.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos24ci",
     "Docker Architecture": [
